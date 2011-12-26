@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Kerstspel 2011</title>
+  
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="stylesheets/foundation.css">
+	<link rel="stylesheet" href="stylesheets/app.css">
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="stylesheets/ie.css">
+	<![endif]-->
+
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<style>
+	body
+	{
+		background-color: #094201;
+		color: #a41717;
+	}
+	
+
+	
+	.deelnemer
+	{
+		height: 150px;
+		width: 150px;
+		padding: 4px;
+		background-color: white;
+		border-radius: 5px;
+	}
+
+	.winnaar
+	{
+		height: 350px;
+		width: 350px;
+				padding: 4px;
+		background-color: white;
+		border-radius: 5px;
+	}
+
+	.rij
+	{
+		padding: 15px;
+		text-align: center;
+	}
+
+	.titel
+	{
+		font-family: "Beyond Wonderland";
+		/*background-color: #ffffff; */
+		border-radius: 7px;
+       /*		padding: 10px; */
+		color: white;
+		font-size: 48px;
+		height: 35px;
+	}
+	
+	.spel
+	{
+		background-color: #a41717;
+		border-radius: 15px;
+		background-image: linear-gradient(left top, rgb(51,17,21) 0%, rgb(171,36,36) 80%);
+		background-image: -o-linear-gradient(left top, rgb(51,17,21) 0%, rgb(171,36,36) 80%);
+		background-image: -moz-linear-gradient(left top, rgb(51,17,21) 0%, rgb(171,36,36) 80%);
+		background-image: -webkit-linear-gradient(left top, rgb(51,17,21) 0%, rgb(171,36,36) 80%);
+		background-image: -ms-linear-gradient(left top, rgb(51,17,21) 0%, rgb(171,36,36) 80%);
+
+		background-image: -webkit-gradient(
+			linear,
+			left top,
+			right bottom,
+			color-stop(0, rgb(51,17,21)),
+			color-stop(0.8, rgb(171,36,36))
+		);
+	}
+	
+	.winnaar_popup
+	{
+		background: #57171a;
+	}
+	
+	.sel
+	{
+		opacity:0.25;
+		filter:alpha(opacity=25); /* For IE8 and earlier */
+	}
+	
+	.unsel
+	{
+		opacity:1.0;
+		filter:alpha(opacity=100); /* For IE8 and earlier */
+	}
+</style>
+
+</head>
+<body onload="setTimeout('scrollTo(0,1)',1000);">
+
+	<!-- container -->
+	<div class="container">
+
+         <div class"row" style="height: 10px;"></div>
+         
+		<div class="row">
+			<div class="twelve columns">
+            	<p />
+                <div class="titel">
+                        <div style="text-align: center">
+                            Kerstspel 2011 - Wie is het?      </div>
+                    </div>
+                    <p />
+                </div>
+		</div>
+        
+         <div class"row" style="height: 30px;"></div>
+        
+        <div class="spel">
+            <div class="row rij">
+                <div class="twelve columns">
+                    <div class="one column">
+                        <img id="imgChristel" class="deelnemer" alt="" />
+                    </div>
+                    <div class="one column">
+                        <img  id="imgDirk" class="deelnemer" alt="" />
+                    </div>
+                    <div class="one column">
+                        <img  id="imgDominiek" class="deelnemer" alt="" />
+                    </div>
+                    <div class="one column">
+                        <img  id="imgJolien" class="deelnemer" alt="" />
+                    </div>
+                    <div class="one column">
+                        <img  id="imgLieve" class="deelnemer" alt="" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class"row" style="height: 50px;"></div>
+            
+            <div class="row rij">
+                <div class="twelve columns">
+                    <div class="one column">
+                        <img id="imgMartine" class="deelnemer" alt="" />
+                    </div>
+                    <div class="one column">
+                        <img id="imgMeme" class="deelnemer" alt="" />
+                    </div>
+                    <div class="one column">
+                        <img id="imgOma" class="deelnemer" alt="" />
+                    </div>
+                    <div class="one column">
+                        <img id="imgPhilip" class="deelnemer" alt="" />
+                    </div>
+                    <div class="one column">
+                        <img id="imgThomas" class="deelnemer" alt="" />
+                    </div>
+                </div>
+            </div>
+		</div>
+        
+                  <div class"row" style="height: 20px;"></div>
+        
+        <div  class="row">
+              <div class="twelve columns" style="text-align: center">
+        		<a href="javascript:reset_game()" class="nice small radius red button">Herbeginnen</a>
+        	</div>
+        </div>
+	</div>
+	<!-- container -->
+
+    <div id="myModal" class="reveal-modal winnaar_popup">
+		<p align="center"><span style="color: white; font-size: 24px">En het pakje gaat naar...</span></p>
+         <p align="center">
+         	<img src="" class="winnaar" />
+         </p>
+         
+         <p align="center">
+         	<span style="color: white; font-size: 24px">Proficiat!</span>
+         </p>
+         <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+
+	<!-- Included JS Files -->
+	<script src="javascripts/foundation.js"></script>
+	<script src="javascripts/app.js"></script>
+
+
+
+<script type="text/javascript">
+	function reset_game()
+	{
+		var all = [	"#imgChristel", "#imgDirk", "#imgDominiek", "#imgThomas",
+					"#imgLieve", "#imgJolien", "#imgMeme","#imgOma", "#imgPhilip", 
+					"#imgMartine"] ;
+		
+		setImg("#imgChristel", "deelnemers/Originele/christel.jpg");
+		setImg("#imgDirk", "deelnemers/Originele/dirk.jpg");	
+		setImg("#imgDominiek", "deelnemers/Originele/dominiek.jpg");	
+		setImg("#imgThomas", "deelnemers/Originele/thomas.jpg");	
+		setImg("#imgLieve", "deelnemers/Originele/lieve.jpg");	
+		setImg("#imgJolien", "deelnemers/Originele/jolien.jpg");	
+		setImg("#imgMeme", "deelnemers/Originele/meme.jpg");	
+		setImg("#imgOma", "deelnemers/Originele/oma.jpg");	
+		setImg("#imgPhilip", "deelnemers/Originele/philip.jpg");		
+		setImg("#imgMartine", "deelnemers/Originele/martine.jpg");
+		
+		$.each(all, function(index, item) {
+			$(item).unbind('click');
+			$(item).click(function() { toggle(item); });
+			unselect(item);
+		});
+	}
+	
+	function gewonnen(pakjevoor)
+	{
+		$('#myModal').reveal();
+		var src = $(pakjevoor).attr('src').replace("/Originele/", "/");
+		$('.winnaar').attr('src', src);
+		reset_game();
+	}
+	
+	function toggle(ctl)
+	{
+		var selected = is_select(ctl);
+		if (selected)
+		{
+			unselect(ctl);
+		} else
+		{
+			select(ctl);			
+		}
+	}
+	
+	
+	function is_select(ctl)
+	{
+		var classList =$(ctl).attr('class').split(/\s+/);
+		var ret = false;
+		$.each( classList, function(index, item){
+			if (item === "sel") {
+			   ret = true;
+			}
+		});
+		
+		return ret;
+	}
+	
+	function select(ctl)
+	{
+		$(ctl).addClass("sel");
+		$(ctl).removeClass("unsel");
+		
+		var c = $(".unsel").size();
+		
+		if (c == 1)
+		{
+			gewonnen($(".unsel")[0]);
+		}
+	}
+	
+	function unselect(ctl)
+	{
+		$(ctl).removeClass("sel");
+		$(ctl).addClass("unsel");
+	}
+	
+	function setImg(ctl, src)
+	{
+		$(ctl).attr("src", src);
+	}
+	
+	reset_game();
+</script>
+
+</body>
+</html>
